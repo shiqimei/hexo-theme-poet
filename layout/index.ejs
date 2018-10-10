@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <%- partial('_partial/head') %>
+    <link rel="stylesheet" href="/css/index.bundle.css">
+</head>
+<body>
+    <% if (page.current === 1 && theme.first_screen.open) { %>
+        <%- partial('_partial/first-screen') %>
+    <% } %>
+
+    <%- partial('_partial/header') %>
+
+    <div class="wrapper">
+        <%- partial('_partial/header-info') %>
+
+        <div class="container">
+            <% page.posts.forEach(function(post) { %>
+                <%- partial('_partial/post', {post: post}) %>
+            <% }) %>
+
+            <div class="pagination">
+                <%- paginator({total: page.total, current: page.current, mid_size: 1, prev_text: __('prev'), next_text: __('next')}) %>
+            </div>
+        </div>
+
+        <%- partial('_partial/footer') %>
+    </div>
+
+    <script src="/js/index.bundle.js"></script>
+</body>
+</html>
+

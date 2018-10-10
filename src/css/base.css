@@ -1,0 +1,243 @@
+@import './common.css';
+
+*,
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+body, html {
+    background: white;
+    font-family: "Exo 2", "Trebuchet MS","Helvetica","Arial",'PingFang SC','Hiragino Sans GB','STHeiti Light','Microsoft YaHei','SimHei','WenQuanYi Micro Hei',sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    transition: all 0.4s ease;
+    z-index: 99;
+}
+
+.container {
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.post {
+    margin-top: 100px;
+}
+
+.title-wrapper {
+    h1 {
+        font-size: 0;
+    }
+    .title {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 40px;
+        line-height: 1.5;
+        font-size: 1.375rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--text-color);
+        letter-spacing: 2px;
+        transition: color 0.2s ease;
+        &:hover {
+            color: var(--primary-color);
+            &::before {
+                animation: sign-rotate 0.4s linear infinite;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 2px;
+            height: 14px;
+            margin-top: -7px;
+            background: var(--primary-color);
+        }
+    }
+    span.title {
+        cursor: default;
+    }
+}
+
+.post .description {
+    margin-bottom: 20px;
+    list-style: none;
+    font-size: 0.875rem;
+    color: var(--third-text-color);
+    letter-spacing: 1px;
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        clear: both;
+    }
+    li {
+        float: left;
+        margin-right: 20px;
+    }
+    li:nth-child(n+2) {
+        position: relative;
+        margin: 0 20px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: -21px;
+            width: 2px;
+            height: 2px;
+            background: var(--third-text-color);
+        }
+    }
+    a {
+        font-size: 0.875rem;
+        color: var(--third-text-color);
+    }
+}
+
+.markdown-body {
+	box-sizing: border-box;
+	min-width: 200px;
+	max-width: 800px;
+    border-radius: 4px;
+    color: #34495e;
+    line-height: 1.75;
+    h1 {
+        font-size: 1.32rem;
+        font-weight: 600;
+    }
+    h2 {
+        font-size: 1.18rem;
+        font-weight: 600;
+    }
+    h3 {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    h4 {
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    h5,
+    h6 {
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    .highlight {
+        tr {
+            border-top: none;
+        }
+        td {
+            padding: 0;
+            border: none;
+        }
+        .code {
+            width: 100%;
+            padding: 0;
+            border: none;
+        }
+    }
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .description {
+        margin: 0;
+    }
+    hr {
+        border: none;
+        flex: 1;
+        height: 1px;
+        background: #e6e6e6;
+    }
+    .more-btn {
+        border: none;
+        outline: none;
+        background: transparent;
+        margin-left: 20px;
+        font-size: 0.875rem;
+        color: var(--third-text-color);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}
+
+/*
+ ---------------triangle canvas start---------------
+*/
+.triangle-canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99;
+    transition: opacity 0.4s;
+}
+
+.triangle-canvas--hidden {
+    opacity: 0;
+}
+/*
+ ---------------triangle canvas end---------------
+*/
+
+@keyframes sign-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .title-wrapper {
+        .title::before {
+            width: 4px;
+        }
+    }
+    .post {
+        margin-top: 70px;
+    }
+}
+

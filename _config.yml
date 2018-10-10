@@ -1,0 +1,63 @@
+# If you have any problem about this theme, 
+# please let me kown it via email or GitHub issue.
+# Thanks!
+
+# primary config
+name: LoliMay's Blog ## Your name shown on the header and the drawer
+description: 最怕你一生碌碌无为，还安慰自己平凡可贵。 ## Introduce yourself
+keywords: Blog, Tech
+site_name: Poem's blog ## Your site name shown on the first screen
+site_description: Life is a Poem ## Introduce your site
+logo: https://i.loli.net/2017/08/31/59a79b0b3ffd8.gif ## The logo on the header and the drawer
+
+# first_screen
+## 1.
+## On the first screen, you can choose to show the image or the color-gradient.
+## 2.
+## The links part of first screen: you can add any link, 
+## just like <GitHub: [your github url]>.
+## note: the key of the link will be the word shown on the screen.
+first_screen:
+  open: false
+  img:
+  gradient:
+    left: '#3a6186'
+    right: '#89253e'
+  dark: true ## If the style of your image or color is dark, set it to true, else false.
+  links:
+    Gmail: codpoe.me@gmail.com
+    Weibo: https://weibo.com
+    GitHub: https://github.com
+
+# header
+header:
+  menu: ## the menu on the header and the drawer, you can customize it.
+    home: /
+    category: /categories
+    archive: /archives
+    about: /about
+  links: ## the links on the header and the drawer, you can customize it.
+    envelope:
+      name: Email
+      url: mailto:lolimay@lolimay.cn
+    github:
+      name: GitHub
+      url: https://github.com/lolimay
+    comments: 
+      name: bbs
+      url: https://bbs.deepin.org/home.php?mod=space&uid=107885
+# copyright
+copyright: 
+  time: 2018 ## the time of copyright in the footer
+  name: LoliMay's Blog ## the name of copyright in the footer
+icp: 
+
+# triangle_canvas
+triangle_canvas: true ## toggle whether your site show the colorful triangle-canvas in the top of all page
+
+# disqus
+## You can find more infomation on https://disqus.com/.
+disqus:
+  open: true ## Toggle whether your site open the disqus
+  shortname: lolimays-blog ## Your disqus shortname
+

@@ -1,0 +1,26 @@
+@import './common.css';
+
+.wrapper {
+    margin-top: 0;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.post:first-child {
+    margin-top: 160px;
+}
+
+.markdown-body {
+    color: #34495e;
+}
+
+.comments {
+    margin: 40px 0;
+}
+
+@media (max-width: 767px) {
+    .post:first-child {
+        margin-top: 130px;
+    }
+}
+

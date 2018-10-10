@@ -1,0 +1,40 @@
+@import './common.css';
+
+.prev-next {
+    margin: 40px 0;
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        clear: both;
+    }
+    .prev,
+    .next {
+        max-width: 50%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--third-text-color);
+        transition: all 0.3s ease;
+        &:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    }
+    .prev {
+        float: left;
+        margin-right: 6px;
+    }
+    .next {
+        float: right;
+        margin-left: 6px;
+    }
+}
+

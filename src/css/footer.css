@@ -1,0 +1,22 @@
+@import './common.css';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -1px 2px rgba(153,153,153,.2);
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--third-text-color);
+    a {
+        color: var(--third-text-color);
+    }
+    a:hover {
+        color: var(--primary-color);
+    }
+    .icp {
+        margin-top: 16px;
+    }
+}

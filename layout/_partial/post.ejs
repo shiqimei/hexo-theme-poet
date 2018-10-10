@@ -1,0 +1,43 @@
+<div class="post">
+    <header class="title-wrapper">
+        <% if (is_home()) { %>
+            <h1>
+                <a class="title" href="<%- url_for(post.path) %>">
+                    <%= post.title %>
+                </a>
+            </h1>
+        <% } else { %>
+            <h1>
+                <span class="title">
+                    <%= post.title %>
+                </span>
+            </h1>
+        <% } %>
+        <ul class="description">
+            <li>
+                <%- post.date.format('YYYY年M月D日') %>
+            </li>
+            <% if (post.path.indexOf('about') === -1) { %>
+                <li>
+                <% post.categories.forEach(function(category, index) { %>
+                    <a href="<%- url_for(config.category_dir + '/' + category.name) %>">
+                        <% if (index < post.categories.length - 1) { %>
+                            <%= category.name + ' · ' %>
+                        <% } else { %>
+                            <%= category.name %>
+                        <% } %>
+                    </a>
+                <% }) %>
+                </li>
+            <% } %>
+        </ul>
+    </header>
+    
+    <section class="markdown-body">
+        <% if (post.excerpt && is_home()) { %>
+            <%- post.excerpt %>
+        <% } else { %>
+            <%- post.content %>
+        <% } %>
+    </section>
+</div>

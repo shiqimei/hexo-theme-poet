@@ -1,0 +1,27 @@
+<div class="first-screen <%- theme.first_screen.dark ? 'first-screen--dark' : '' %>"
+    style="<%- theme.first_screen.img ? 'background-image: url(' + theme.first_screen.img + ')' : 
+        (theme.first_screen.gradient ? 
+            'background: linear-gradient(to right,' + theme.first_screen.gradient.left + ',' + theme.first_screen.gradient.right + ')' : '') %>"
+    >
+    <img src="" alt="">
+    <div class="center">
+        <h1 class="name"><%= theme.site_name %></h1>
+        <h2 class="description"><%= theme.site_description %></h2>
+        <div class="links">
+            <% for (var key in theme.first_screen.links) { %>
+                <% if (key.indexOf('mail') !== -1) { %>
+                    <a href="mailto:<%= theme.first_screen.links[key] %>">
+                        <%= key %>
+                    </a>
+                <% } else { %>
+                    <a href="<%= theme.first_screen.links[key] %>" target="_blank">
+                        <%= key %>
+                    </a>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+
+</div>
+<div class="holder"></div>
+

@@ -1,0 +1,103 @@
+@import './common.css';
+
+.first-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    transition: all 0.2s cubic-bezier(0.1, 0.34, 0.5, 0.8);
+}
+
+.first-screen .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    margin-top: -30px;
+    text-align: center;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: default;
+    h1 {
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--text-color);
+        letter-spacing: 8px;
+    }
+    
+    h2 {
+        margin-bottom: 30px;
+        font-size: 16px;
+        font-weight: normal;
+        color: var(--third-text-color);
+        letter-spacing: 2px;
+    }
+    a {
+        position: relative;
+        float: left;
+        padding: 0 12px;
+        font-size: 16px;
+        color: var(--third-text-color);
+        letter-spacing: 2px;
+        transition: color 0.2s ease;
+        &:hover {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        &:nth-child(n+2)::before {
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: -1px;
+            width: 2px;
+            height: 2px;
+            background: var(--third-text-color);;
+        }
+    }
+}
+
+.first-screen--grid .center {
+    h1 {
+        color: var(--text-color);
+    }
+    h2 {
+        color: var(--third-text-color);
+    }
+}
+
+.first-screen--dark .center {
+    h1 {
+        color: white;
+    }
+    h2 {
+        color: rgba(255,255,255,0.8);
+    }
+    a {
+        color: rgba(255,255,255,0.8);
+        &:nth-child(n+2)::before {
+            background: rgba(255,255,255,0.6);
+        }
+    }
+}
+
+.holder {
+    margin-top: 100vh;
+}
+
+@media screen and (max-width: 400px) {
+    .first-screen .center {
+        h1 {
+            font-size: 24px;
+        }
+    }
+}
+

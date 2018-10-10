@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <%- partial('_partial/head') %>
+    <link rel="stylesheet" href="/css/post.bundle.css">
+</head>
+<body>
+    <%- partial('_partial/header', {post: page}) %>
+
+    <div class="wrapper">
+        <div class="container">
+            <%- partial('_partial/post', {post: page}) %>
+            <%- partial('_partial/prev-next') %>
+            <section class="comments">
+                <%- partial('_partial/comments') %>
+            </section>
+        </div>
+        <%- partial('_partial/footer') %>
+    </div>
+    <%- partial('_partial/toc') %>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <%- partial('_partial/head') %>
+    <link rel="stylesheet" href="/css/post.bundle.css">
+    <script>
+        window.onload = function (ev) {
+            var wrapper = document.querySelector('.wrapper');
+            wrapper.classList.add('wrapper--show');
+        }
+    </script>
+</head>
+<body>
+    <%- partial('_partial/header') %>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="post">
+                <div class="title-wrapper">
+                    <span class="title">
+                        <%= page.title %>
+                    </span>
+                    <ul class="description">
+                        <li>
+                            <%- page.date.format('ll') %>
+                        </li>
+                    </ul>
+                </div>
+                
+                <section class="markdown-body">
+                    <%- page.content %>
+                </section>
+            </div>
+
+            <section class="comments">
+                <%- partial('_partial/comments') %>
+            </section>
+        </div>
+        <%- partial('_partial/footer') %>
+    </div>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>
