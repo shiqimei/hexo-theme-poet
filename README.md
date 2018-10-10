@@ -9,7 +9,7 @@ An elegant [hexo](https://hexo.io/) theme based on [Poem](https://github.com/cod
 1. Download Poet
 ```
 cd <your-blog-root-directory>
-git clone https://github.com/lolimay/hexo-theme-poet.git themes
+git clone https://github.com/lolimay/hexo-theme-poet.git themes/poet
 ```
 2. Switch theme
 
