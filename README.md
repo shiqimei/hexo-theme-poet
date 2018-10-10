@@ -1,18 +1,19 @@
-# Poem
-[Demo](http://codpoe.me/) | 中文文档（暂无）
+# Poet
+[Preview](http://www.lolimay.cn)
 
-An elegant theme for [Hexo](https://hexo.io/). Some of the desgin are inspired by [EVAN YOU's blog](http://evanyou.me).
+An elegant [hexo](https://hexo.io/) theme based on [Poem](https://github.com/codpoe/hexo-theme-Poem/). More info and help can be found in [Codpoe/hexo-theme-poem](https://github.com/codpoe/hexo-theme-poem/).
 
-![](./blob/demo.jpeg)
+![](http://images.lolimay.cn/18-10-10/5096232.jpg)
 
 ## Installation
-Clone this repository
-
+1. Download Poet
 ```
-$ git clone git@github.com:Codpoe/hexo-theme-poem.git
+cd <your-blog-root-directory>
+git clone git@github.com:Codpoe/hexo-theme-Poet.git themes
 ```
+2. Switch theme
 
-Then you can modify theme setting in `hexo-theme-poem/_config.yml`.
+You can switch hexo theme setting in `_config.yml`.
 
 ## Configuration
 The default configuration:
@@ -23,11 +24,11 @@ The default configuration:
 # Thanks!
 
 # primary config
-name: Poem ## Your name shown on the header and the drawer
+name: Poet ## Your name shown on the header and the drawer
 description: Always believe that something wonderful is about to happen ## Introduce yourself
 keywords: Blog, Tech
-site_name: Poem's blog ## Your site name shown on the first screen
-site_description: Life is a Poem ## Introduce your site
+site_name: Poet's Blog ## Your site name shown on the first screen
+site_description: Life is a Poet ## Introduce your site
 logo: https://i.loli.net/2017/08/31/59a79b0b3ffd8.gif ## The logo on the header and the drawer
 
 # first_screen
@@ -77,33 +78,3 @@ disqus:
   open: false ## Toggle whether your site open the disqus
   shortname: ## Your disqus shortname
 ```
-
-## Features
-### First Screen
-On the first screen, you can choose to show the image or the color-gradient.
-
-Note: If the image or the color you set is dark, remember set the `dark` in `hexo-theme-poem/_config.yaml` to true, or you may not recognize your words (header words, first screen words...) from the background.
-
-### Read More
-At most time, we don't want to show the full content of the post, then You can seperate your post content with `<!--more-->`. The content behind the `<!--more-->` will be hidden on the home page.
-
-### Normal Page
-If you want to add a normal page with header and footer(eg. the about page), just create a folder that contains a `index.md` file in the `source` folder in the root directory, and add `layout: normal` in `front-matter` in `index.md`.
-
-Note that the normal page will open the comments by default. If you want to close the comments, just normal, add `comments: false` in `front-matter` in `index.md`.
-
-### Clean Page
-If you want to add a clean page with nothing that you can customize completely, just create a folder that contains a `index.html` file in the `source` folder in the root directory.
-
-### Languages
-Currently only English(default) and Simplified Chinese(zh-CN) are supported.
-
-## More
-### How to navigate to the new page?
-The url of the new page(normal page or clean page) is `http(s)://[your site address]/[the name of the folder that contains the new page]`.
-
-## Todo
-- Some widgets
-- The progress bar of the post page
-- ...
-
