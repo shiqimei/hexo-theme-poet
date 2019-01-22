@@ -14,6 +14,11 @@
             </h1>
         <% } %>
         <ul class="description">
+            <% if (post.top) { %>
+                <li>
+                    <i class="fa fa-thumb-tack"></i> 置顶
+                </li>
+            <% } %>
             <li>
                 <%- post.date.format('YYYY年M月D日') %>
             </li>
@@ -22,7 +27,7 @@
                 <% post.categories.forEach(function(category, index) { %>
                     <a href="<%- url_for(config.category_dir + '/' + category.name) %>">
                         <% if (index < post.categories.length - 1) { %>
-                            <%= category.name + ' · ' %>
+                            <%= category.name + ' ' %>
                         <% } else { %>
                             <%= category.name %>
                         <% } %>
@@ -40,4 +45,45 @@
             <%- post.content %>
         <% } %>
     </section>
+    <script>
+        (document.onload = () => {
+            const figcaptions = document.querySelectorAll('.highlight figcaption')
+
+            for(let item of figcaptions) {
+                if(item.innerText.match(/false/)) {
+                    const tbody = item.parentElement.querySelector('tbody')
+                    const span = item.querySelector('span')
+
+                    span.innerText = span.innerText.replace(/ false/, '（点击展开）')
+                    tbody.style.display = 'none'
+                }
+            }
+
+            for(let item of figcaptions) {
+                const span = item.querySelector('span')
+
+                span.addEventListener('click', (e) => {
+                    const figcaption = e.path[0]
+                    const codeblock = e.path[2]
+                    const tbody = codeblock.getElementsByTagName('tbody')[0]
+    
+                    switchCodeblock(figcaption, tbody)
+                })
+            }
+        })()
+
+        function switchCodeblock(figcaption, tbody) {
+            let display = tbody.style.display
+
+            if(display === 'none') {
+                tbody.style.display = 'block'
+                figcaption.innerText = figcaption.innerText.replace(/（点击展开）/, '')
+            } else {
+                tbody.style.display = 'none'
+                if(figcaption.innerText.match(/（点击展开）/) === null) {
+                    figcaption.innerText += '（点击展开）'
+                }
+            }
+        }
+    </script>
 </div>

@@ -570,6 +570,19 @@
   margin-bottom: 24px;
 }
 
+.markdown-body .highlight figcaption {
+  text-align: left;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  color: rgb(183, 183, 183);
+  font-size: 14px;
+  user-select: none;
+}
+
+.markdown-body .highlight figcaption span {
+  cursor: pointer;
+}
+
 .markdown-body .highlight pre {
   margin-bottom: 0;
   word-break: normal;
@@ -1716,46 +1729,26 @@ td .gutter {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 300px;
-    margin-left: -240px;
+    max-width: 600px;
+    margin-left: 0;
     z-index: 999;
     transition: all 0.4s ease-in-out;
     transition-delay: 0.2s;
 }
 
-.toc-wrapper:hover {
-    -webkit-transform: translateX(240px);
-            transform: translateX(240px);
-}
 
-.toc-wrapper:hover .toc-link {
-    height: 50px;
-    line-height: 50px
-}
 
-.toc-wrapper:hover .toc-link:hover {
-    background: #26aafe;
-    color: white;
+
+.toc-link:hover {
+    color: #26aafe;
     text-decoration: none;
 }
 
-.toc-wrapper:hover .toc-link:hover::before {
-    background: #26aafe;
-}
-
-.toc-wrapper:hover .toc-link::before {
-    -webkit-transform: translateX(-300px);
-    transform: translateX(-300px);
-    visibility: hidden;
-    opacity: 0;
-}
 
 .toc {
     position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    width: 240px;
+    top: 160px;
+    max-width: 540px;
     max-height: 100%;
     list-style-type: none;
 }
@@ -1774,20 +1767,6 @@ td .gutter {
     transition: height 0.24s, background 0.1s
 }
 
-.toc-link::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        margin-top: -1px;
-        height: 2px;
-        border-radius: 1px;
-        background: #ccc;
-        visibility: visible;
-        opacity: 1;
-        transition: all 0.4s ease-in-out;
-        transition-delay: 0.2s;
-}
 
 .toc-level-1 .toc-link::before {
     width: 3em;
@@ -1808,10 +1787,6 @@ td .gutter {
 .toc-link--active {
     color: #26aafe;
     font-weight: 700
-}
-
-.toc-link--active::before {
-        background: #26aafe;
 }
 
 .toc-text {

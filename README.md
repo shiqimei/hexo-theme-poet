@@ -3,7 +3,7 @@
 
 An elegant [hexo](https://hexo.io/) theme based on [Poem](https://github.com/codpoe/hexo-theme-Poem/). More info and help can be found in [Codpoe/hexo-theme-poet](https://github.com/codpoe/hexo-theme-poet/).
 
-![](http://images.lolimay.cn/18-10-10/5096232.jpg)
+![](https://images.lolimay.cn/18-10-10/5096232.jpg)
 
 ## Installation
 1. Download Poet

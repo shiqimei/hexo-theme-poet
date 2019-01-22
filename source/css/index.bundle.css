@@ -1563,7 +1563,7 @@ a:hover {
 
 .post .description li:nth-child(n+2) {
     position: relative;
-    margin: 0 20px
+    margin: 0 0 0 20px
 }
 
 .post .description a {
