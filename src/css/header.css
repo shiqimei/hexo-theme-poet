@@ -71,6 +71,7 @@
 }
 
 .header__name {
+    font-family: KaTeX_Math;
     position: relative;
     font-size: 1.625rem;
     font-weight: 700;

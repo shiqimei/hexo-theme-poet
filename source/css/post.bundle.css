@@ -510,6 +510,9 @@
   width: 100%;
   overflow: auto;
   border-radius: 3px;
+}
+
+.highlight table {
   background: #F6F8FA;
 }
 
@@ -836,6 +839,7 @@
 }
 
 .header__name {
+    font-family: KaTeX_Math;
     position: relative;
     font-size: 26px;
     font-size: 1.625rem;

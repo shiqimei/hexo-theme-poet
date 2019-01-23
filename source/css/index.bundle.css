@@ -510,7 +510,6 @@
   width: 100%;
   overflow: auto;
   border-radius: 3px;
-  background: #F6F8FA;
 }
 
 .markdown-body table th {
@@ -823,6 +822,7 @@
 }
 
 .header__name {
+    font-family: KaTeX_Math;
     position: relative;
     font-size: 26px;
     font-size: 1.625rem;
